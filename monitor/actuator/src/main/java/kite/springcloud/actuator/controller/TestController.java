@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping(value = "getString")
-    public String getString(){
+    public String getString() {
         return "hello spring boot actutor";
     }
 }

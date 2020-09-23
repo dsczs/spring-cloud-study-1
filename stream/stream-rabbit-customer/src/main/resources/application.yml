@@ -8,12 +8,12 @@ spring:
   cloud:
     stream:
       bindings:
-#        input:
-#          destination: default.messages
-#          binder: local_rabbit
-#        output:
-#          destination: default.messages
-#          binder: local_rabbit
+        #        input:
+        #          destination: default.messages
+        #          binder: local_rabbit
+        #        output:
+        #          destination: default.messages
+        #          binder: local_rabbit
         log_input:
           destination: kite.log.messages
           binder: local_rabbit
@@ -49,12 +49,12 @@ spring:
   cloud:
     stream:
       bindings:
-#        input:
-#          destination: default.messages
-#          binder: local_rabbit
-#        output:
-#          destination: default.messages
-#          binder: local_rabbit
+        #        input:
+        #          destination: default.messages
+        #          binder: local_rabbit
+        #        output:
+        #          destination: default.messages
+        #          binder: local_rabbit
         log_input:
           destination: kite.log.messages
           binder: local_rabbit

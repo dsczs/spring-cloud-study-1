@@ -10,17 +10,17 @@ spring:
       idle-timeout: 600000
       max-lifetime: 1800000
       maximum-pool-size: 9
-#  redis:
-#    database: 2
-#    host: localhost
-#    port: 32768
-#    password: 1qaz@WSX
-#    jedis:
-#      pool:
-#        max-active: 8
-#        max-idle: 8
-#        min-idle: 0
-#    timeout: 100ms
+  #  redis:
+  #    database: 2
+  #    host: localhost
+  #    port: 32768
+  #    password: 1qaz@WSX
+  #    jedis:
+  #      pool:
+  #        max-active: 8
+  #        max-idle: 8
+  #        min-idle: 0
+  #    timeout: 100ms
   cloud:
     consul:
       discovery:

@@ -18,6 +18,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @SpringBootApplication
 public class Application {
 
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
     @EnableWebSecurity
     static class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -25,9 +29,5 @@ public class Application {
         protected void configure(HttpSecurity http) throws Exception {
             http.csrf().ignoringAntMatchers("/eureka/**");
         }
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
     }
 }

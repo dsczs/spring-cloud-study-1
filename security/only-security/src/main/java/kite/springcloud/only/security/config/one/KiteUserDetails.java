@@ -1,14 +1,11 @@
 package kite.springcloud.only.security.config.one;
 
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 /**
  * KiteUserDetail
@@ -19,9 +16,17 @@ import java.util.Set;
 @Data
 public class KiteUserDetails implements UserDetails {
 
-    public KiteUserDetails(String username,String password, List<? extends GrantedAuthority> authorities,
+    private final String username;
+    private final List<? extends GrantedAuthority> authorities;
+    private final boolean accountNonExpired;
+    private final boolean accountNonLocked;
+    private final boolean credentialsNonExpired;
+    private final boolean enabled;
+    private String password;
+    private String extra;
+    public KiteUserDetails(String username, String password, List<? extends GrantedAuthority> authorities,
                            boolean accountNonExpired, boolean accountNonLocked,
-                           boolean credentialsNonExpired, boolean enabled,String extra) {
+                           boolean credentialsNonExpired, boolean enabled, String extra) {
         this.username = username;
         this.password = password;
         this.authorities = authorities;
@@ -34,22 +39,9 @@ public class KiteUserDetails implements UserDetails {
 
     public KiteUserDetails(String username, String password, List<? extends GrantedAuthority> authorities, String extra) {
         this(username, password, authorities,
-                true,true,
-                true,true,extra);
+                true, true,
+                true, true, extra);
     }
-
-    private String password;
-
-    private final String username;
-
-    private final List<? extends GrantedAuthority> authorities;
-
-    private final boolean accountNonExpired;
-    private final boolean accountNonLocked;
-    private final boolean credentialsNonExpired;
-    private final boolean enabled;
-
-    private String extra;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

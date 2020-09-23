@@ -19,6 +19,7 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private String userName;
     @Value("${spring.security.user.password}")
     private String password;
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

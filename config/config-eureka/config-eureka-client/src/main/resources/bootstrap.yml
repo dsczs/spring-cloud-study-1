@@ -18,12 +18,12 @@ spring:
   application:
     name: config-eureka-client
   cloud:
-     config:
-       label: master
-       profile: prod
-       discovery:
-         enabled: true
-         service-id: config-eureka-server
+    config:
+      label: master
+      profile: prod
+      discovery:
+        enabled: true
+        service-id: config-eureka-server
 
 
 ---
@@ -32,12 +32,12 @@ spring:
   application:
     name: config-eureka-client
   cloud:
-     config:
-       label: master
-       profile: dev
-       discovery:
-          enabled: true
-          service-id: config-eureka-server
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-eureka-server
 
 
 

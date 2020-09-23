@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println(new BCryptPasswordEncoder().encode("user-secret-8888"));
         System.out.println(new BCryptPasswordEncoder().encode("client-secret-8888"));

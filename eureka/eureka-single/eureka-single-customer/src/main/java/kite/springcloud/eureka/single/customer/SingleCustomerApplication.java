@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @Author  fengzheng
+ * @Author fengzheng
  * SingleCustomerApplication
  */
 @SpringBootApplication
@@ -17,18 +17,19 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 public class SingleCustomerApplication {
 
+    public static void main(String[] args) {
+        SpringApplication.run(SingleCustomerApplication.class, args);
+    }
+
     /**
      * 注入 RestTemplate
      * 并用 @LoadBalanced 注解，用负载均衡策略请求服务提供者
+     *
      * @return
      */
     @LoadBalanced
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(SingleCustomerApplication.class, args);
     }
 }

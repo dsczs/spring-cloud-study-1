@@ -13,7 +13,26 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "mysql")
 public class MySqlComplexConfig {
 
-    public static class UserInfo{
+    private String host;
+    private UserInfo user;
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public UserInfo getUser() {
+        return user;
+    }
+
+    public void setUser(UserInfo user) {
+        this.user = user;
+    }
+
+    public static class UserInfo {
 
         private String username;
 
@@ -42,27 +61,6 @@ public class MySqlComplexConfig {
                     ", password='" + password + '\'' +
                     '}';
         }
-    }
-
-    private String host;
-
-    private UserInfo user;
-
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public UserInfo getUser() {
-        return user;
-    }
-
-    public void setUser(UserInfo user) {
-        this.user = user;
     }
 
 }

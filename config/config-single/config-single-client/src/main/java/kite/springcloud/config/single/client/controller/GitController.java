@@ -24,12 +24,12 @@ public class GitController {
     private GitAutoRefreshConfig gitAutoRefreshConfig;
 
     @GetMapping(value = "show")
-    public Object show(){
+    public Object show() {
         return gitConfig;
     }
 
     @GetMapping(value = "autoShow")
-    public Object autoShow(){
+    public Object autoShow() {
         return gitAutoRefreshConfig;
     }
 }

@@ -12,11 +12,11 @@ spring:
   application:
     name: config-eureka-server
   cloud:
-     config:
-        server:
-          git:
-            uri: https://github.com/huzhicheng/config-only-a-demo
-            username: username
-            password: password
-            default-label: master
-            search-paths: config
+    config:
+      server:
+        git:
+          uri: https://github.com/huzhicheng/config-only-a-demo
+          username: username
+          password: password
+          default-label: master
+          search-paths: config

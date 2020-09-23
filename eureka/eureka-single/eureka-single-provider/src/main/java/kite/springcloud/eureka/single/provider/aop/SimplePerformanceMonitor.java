@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 public class SimplePerformanceMonitor {
 
     @Pointcut("within(kite.springcloud.eureka.single.provider..*)")
-    public void logTime(){
+    public void logTime() {
 
     }
 
@@ -44,7 +44,7 @@ public class SimplePerformanceMonitor {
         String methodName = signature.getDeclaringTypeName() + "." + signature.getName();
 
         // 打印耗时的信息
-        log.info(String.format("「%s」执行时间为：%d ms",methodName, endTime - startTime));
+        log.info(String.format("「%s」执行时间为：%d ms", methodName, endTime - startTime));
         return obj;
     }
 }

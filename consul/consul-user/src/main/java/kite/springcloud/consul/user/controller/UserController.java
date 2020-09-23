@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @GetMapping(value = "get")
-    public User getUserInfo(){
+    public User getUserInfo() {
         User user = new User();
         user.setName("古时的风筝");
         user.setAge(8);

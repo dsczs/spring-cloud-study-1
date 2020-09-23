@@ -19,7 +19,7 @@ public class RateLimiterController {
 
 
     @GetMapping(value = "test")
-    public String test(){
+    public String test() {
         log.info("");
         return "正常返回";
     }

@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "hello")
 public class HelloController {
 
-    @GetMapping(value = "get")
-    public String getUserInfo(){
-
-        return "hello";
-    }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(new BCryptPasswordEncoder().encode("user-secret-8888"));
         System.out.println(new BCryptPasswordEncoder().encode("client-secret-8888"));
         System.out.println(new BCryptPasswordEncoder().encode("code-secret-8888"));
+    }
+
+    @GetMapping(value = "get")
+    public String getUserInfo() {
+
+        return "hello";
     }
 
 }

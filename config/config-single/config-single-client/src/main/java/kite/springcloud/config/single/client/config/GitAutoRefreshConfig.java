@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * GitAutoRefreshConfig
  * 配合调用 actuator/refresh 方法 再次获取的就是新的值
+ *
  * @author fengzheng
  * @date 2019/3/21
  */
@@ -14,6 +15,9 @@ import org.springframework.stereotype.Component;
 @Data
 @ConfigurationProperties(prefix = "data")
 public class GitAutoRefreshConfig {
+
+    private String env;
+    private UserInfo user;
 
     public static class UserInfo {
         private String username;
@@ -44,8 +48,4 @@ public class GitAutoRefreshConfig {
                     '}';
         }
     }
-
-    private String env;
-
-    private UserInfo user;
 }

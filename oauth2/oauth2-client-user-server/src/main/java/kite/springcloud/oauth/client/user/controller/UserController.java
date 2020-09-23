@@ -24,19 +24,19 @@ public class UserController {
     @GetMapping(value = "get")
     //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    public Object get(Authentication authentication){
+    public Object get(Authentication authentication) {
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         authentication.getCredentials();
-        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails)authentication.getDetails();
+        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) authentication.getDetails();
         String token = details.getTokenValue();
         return token;
     }
 
     @GetMapping(value = "jwt")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    public Object jwtParser(Authentication authentication){
+    public Object jwtParser(Authentication authentication) {
         authentication.getCredentials();
-        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails)authentication.getDetails();
+        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) authentication.getDetails();
         String jwtToken = details.getTokenValue();
         Claims claims = Jwts.parser()
                 .setSigningKey("dev".getBytes(StandardCharsets.UTF_8))

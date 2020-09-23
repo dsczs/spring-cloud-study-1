@@ -21,7 +21,7 @@ public class OrderController {
 
 
     @GetMapping(value = "get")
-    public CustomerOrder getOrder(){
+    public CustomerOrder getOrder() {
         CustomerOrder customerOrder = new CustomerOrder();
         customerOrder.setOrderId("9999");
         customerOrder.setProductName("MacBook Pro");

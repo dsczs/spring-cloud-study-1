@@ -20,7 +20,7 @@ public class UseController {
     private KiteService kiteService;
 
     @GetMapping(value = "print")
-    public void print(){
+    public void print() {
         kiteService.print();
     }
 }

@@ -22,24 +22,24 @@ public class ProviderController {
     private DiscoveryClient discoveryClient;
 
     @RequestMapping(value = "/timeout")
-    public String timeOut() throws Exception{
+    public String timeOut() throws Exception {
         Thread.sleep(7000);
         return "wait 7 seconds timeout";
     }
 
     @RequestMapping(value = "/hello")
-    public String hello(){
+    public String hello() {
         List<String> services = discoveryClient.getServices();
-        for(String s : services){
+        for (String s : services) {
             log.info(s);
         }
         return "hello spring cloud!";
     }
 
     @RequestMapping(value = "/nice")
-    public String nice(){
+    public String nice() {
         List<String> services = discoveryClient.getServices();
-        for(String s : services){
+        for (String s : services) {
             log.info("gogogo" + s);
         }
         return "nice to meet you!";

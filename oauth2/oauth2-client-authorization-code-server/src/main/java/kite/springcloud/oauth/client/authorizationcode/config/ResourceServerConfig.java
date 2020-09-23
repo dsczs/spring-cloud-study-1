@@ -24,6 +24,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 
+    @Autowired
+    private TokenStore jwtTokenStore;
+
     @Bean
     public TokenStore jwtTokenStore() {
         return new JwtTokenStore(jwtAccessTokenConverter());
@@ -37,9 +40,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         accessTokenConverter.setVerifierKey("dev");
         return accessTokenConverter;
     }
-
-    @Autowired
-    private TokenStore jwtTokenStore;
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {

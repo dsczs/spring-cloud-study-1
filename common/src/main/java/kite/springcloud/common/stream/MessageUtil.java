@@ -11,7 +11,7 @@ import org.springframework.messaging.Message;
  */
 public class MessageUtil {
 
-    public static <T> Message<T> message(T message){
+    public static <T> Message<T> message(T message) {
         return MessageBuilder.withPayload(message).build();
     }
 

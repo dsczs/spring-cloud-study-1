@@ -16,13 +16,11 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerController {
 
 
+    private static final String applicationName = "ha-provider";
     @Autowired
     private RestTemplate restTemplate;
-
     @Autowired
     private IHelloService helloService;
-
-    private static final String applicationName = "ha-provider";
 
     @GetMapping(value = "test")
     public Object test() {

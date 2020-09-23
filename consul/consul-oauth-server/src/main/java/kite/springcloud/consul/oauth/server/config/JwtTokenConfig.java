@@ -29,7 +29,7 @@ public class JwtTokenConfig {
     }
 
     @Bean
-    public TokenEnhancer jwtTokenEnhancer(){
-       return new JWTokenEnhancer();
+    public TokenEnhancer jwtTokenEnhancer() {
+        return new JWTokenEnhancer();
     }
 }

@@ -4,11 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -29,19 +26,19 @@ public class HelloController {
     private String applicationName;
 
     @GetMapping(value = "test")
-    public String test(){
+    public String test() {
 
         List<String> services = discoveryClient.getServices();
-        for(String s : services){
+        for (String s : services) {
             log.info(s);
         }
         return "hello spring cloud!" + applicationName;
     }
 
     @GetMapping(value = "nice")
-    public String nice(){
+    public String nice() {
         List<String> services = discoveryClient.getServices();
-        for(String s : services){
+        for (String s : services) {
             log.info("gogogo" + s);
         }
         return "nice to meet you!";

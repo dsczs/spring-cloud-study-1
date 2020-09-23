@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SleuthController {
 
     @GetMapping(value = "sleuth")
-    public String say(String value){
+    public String say(String value) {
         return "hello sleuth  " + value;
     }
 }

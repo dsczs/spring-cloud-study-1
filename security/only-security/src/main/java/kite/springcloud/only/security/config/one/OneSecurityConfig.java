@@ -7,11 +7,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import javax.sql.DataSource;
 
 /**
  * OneSecurityConfig
@@ -25,6 +22,12 @@ public class OneSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private KiteUserDetailsService kiteUserDetailsService;
+
+    public static void main(String[] args) {
+
+        // $2a$10$cMFMu9A3R69USaoM0NFVuOA8seaZix3M4Im/gh2llbVZceafrKBkq
+        System.out.println(new BCryptPasswordEncoder().encode("123456"));
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -41,11 +44,5 @@ public class OneSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    public static void main(String[] args){
-
-        // $2a$10$cMFMu9A3R69USaoM0NFVuOA8seaZix3M4Im/gh2llbVZceafrKBkq
-        System.out.println(new BCryptPasswordEncoder().encode("123456"));
     }
 }

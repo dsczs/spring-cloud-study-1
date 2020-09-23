@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 启动类
- * @author  古时的风筝
+ *
+ * @author 古时的风筝
  */
 @SpringBootApplication
 public class Application {

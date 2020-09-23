@@ -5,8 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.messaging.Processor;
-import org.springframework.cloud.stream.messaging.Source;
 
 /**
  * ProducerApplication
@@ -16,7 +14,7 @@ import org.springframework.cloud.stream.messaging.Source;
  */
 
 @SpringBootApplication
-@EnableBinding(value = { MyProcessor.class})
+@EnableBinding(value = {MyProcessor.class})
 @Slf4j
 public class ProducerApplication {
 

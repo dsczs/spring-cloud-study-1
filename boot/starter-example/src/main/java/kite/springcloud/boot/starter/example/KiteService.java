@@ -15,12 +15,12 @@ public class KiteService {
 
     private int port;
 
-    public KiteService(KiteProperties kiteProperties){
+    public KiteService(KiteProperties kiteProperties) {
         this.host = kiteProperties.getHost();
         this.port = kiteProperties.getPort();
     }
 
-    public void print(){
-        log.info(this.host + ":" +this.port);
+    public void print() {
+        log.info(this.host + ":" + this.port);
     }
 }

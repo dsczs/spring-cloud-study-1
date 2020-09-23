@@ -24,10 +24,10 @@ public class ClientController {
     @GetMapping(value = "get")
     //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    public Object get(Authentication authentication){
+    public Object get(Authentication authentication) {
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         authentication.getCredentials();
-        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails)authentication.getDetails();
+        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) authentication.getDetails();
         String jwtToken = details.getTokenValue();
         Claims claims = Jwts.parser()
                 .setSigningKey("dev".getBytes(StandardCharsets.UTF_8))
@@ -38,7 +38,7 @@ public class ClientController {
     }
 
     @GetMapping(value = "test")
-    public String test(){
+    public String test() {
         return "success";
     }
 }

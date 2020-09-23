@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * IHelloService
  * 配置服务提供者：single-provider 是服务提供者的 application.name
+ *
  * @author fengzheng
  * @date 2018/9/26
  */

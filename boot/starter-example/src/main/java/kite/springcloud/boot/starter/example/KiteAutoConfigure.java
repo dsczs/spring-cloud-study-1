@@ -26,8 +26,8 @@ public class KiteAutoConfigure {
 
     @Bean
     @ConditionalOnMissingBean(KiteService.class)
-    @ConditionalOnProperty(prefix = "kite.example",value = "enabled", havingValue = "true")
-    KiteService kiteService(){
+    @ConditionalOnProperty(prefix = "kite.example", value = "enabled", havingValue = "true")
+    KiteService kiteService() {
         return new KiteService(kiteProperties);
     }
 }
